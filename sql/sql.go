@@ -1,11 +1,10 @@
 package sql
 
-import(
+import (
 	"context"
 	"database/sql"
-	"fmt"
-	"goWebApi/models"
 	_ "github.com/denisenkom/go-mssqldb"
+	"goWebApi/models"
 	"log"
 	"time"
 )
@@ -17,7 +16,7 @@ func OpenConnection() *sql.DB {
 	if err != nil{
 		log.Fatal(err)
 	}
-	fmt.Println("testtttt")
+
 	return db
 }
 
@@ -33,7 +32,7 @@ func GetAllUser(db *sql.DB) (*config.UserList, error) {
 
 	defer rows.Close()
 	userList := new(config.UserList)
-	fmt.Println("Test")
+
 	for rows.Next() {
 		var _name string
 		var _lastName string

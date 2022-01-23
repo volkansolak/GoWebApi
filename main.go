@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	config "goWebApi/models"
 	"goWebApi/sql"
 	"net/http"
@@ -58,16 +57,4 @@ func main() {
 	}
 
 	e.Logger.Fatal(e.Start(":" + httpPort))
-}
-
-func Create(c echo.Context) error {
-	fmt.Println("Test1")
-	fmt.Println(c)
-	fmt.Println("Test2")
-	return nil
-}
-
-type User struct {
-	Email string `json:"email" form:"email" query:"email"`
-	Password  string `json:"password" form:"password" query:"password"`
 }
